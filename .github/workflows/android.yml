@@ -25,7 +25,7 @@ jobs:
       run: ./gradlew assembleDebug
 
     - name: Realese using hub for master
-      if: github.branch == 'pull_request'
+      if: github.event_name == 'pull_request'
       uses: ShaunLWM/action-release-debugapk@master
       env:
        GITHUB_TOKEN: ${{ secrets.SecRet }}
