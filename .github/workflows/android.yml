@@ -1,10 +1,13 @@
 name: Build & Publish Debug APK
 
 on:
- push:
+  pull_request:
+  push:
+    branches:
+      - '*'
    
 jobs:
-  build:
+  build-pr:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -18,9 +21,14 @@ jobs:
       run: ./gradlew build
     - name: Build Debug APK
       run: ./gradlew assembleDebug
+
+  realease-master:
+    steps:
+    - needs: build-pr
     - name: Releasing using Hub
       uses: ShaunLWM/action-release-debugapk@master
       env:
        GITHUB_TOKEN: ${{ secrets.SecRet }}
        APP_FOLDER: app
        RELEASE_TITLE: New Build
+    
