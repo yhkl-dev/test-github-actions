@@ -20,11 +20,12 @@ jobs:
       run: chmod +x ./gradlew
     - name: Build with Gradle
       run: ./gradlew build
+
     - name: Build Debug APK
       run: ./gradlew assembleDebug
 
     - name: Realese using hub for master
-      if: github.branch == 'master'
+      if: github.event_name == 'pull_request'
       uses: ShaunLWM/action-release-debugapk@master
       env:
        GITHUB_TOKEN: ${{ secrets.SecRet }}
