@@ -3,9 +3,7 @@ name: Build & Publish Debug APK
 on:
   pull_request:
   push:
-    branches:
-      - '*'
-    branch-ignore:
+    branches-ignore:
       - master
    
 jobs:
