@@ -23,6 +23,6 @@ jobs:
     - name: Releasing using Hub
       uses: yhkl-dev/action-release-debugapk@master
       env:
-       GITHUB_TOKEN: ${{ secrets.SecRet }}
+       GITHUB_TOKEN: ${{ secrets.yhkl }}
        APP_FOLDER: app
        RELEASE_TITLE: New Build
