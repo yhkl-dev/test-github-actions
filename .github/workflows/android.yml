@@ -23,8 +23,8 @@ jobs:
       run: ./gradlew assembleDebug
 
   realease-master:
+    needs: build-pr
     steps:
-    - needs: build-pr
     - name: Releasing using Hub
       uses: ShaunLWM/action-release-debugapk@master
       env:
