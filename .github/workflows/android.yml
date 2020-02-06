@@ -7,7 +7,8 @@ on:
       - '*'
    
 jobs:
-  build-pr:
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -22,14 +23,13 @@ jobs:
     - name: Build Debug APK
       run: ./gradlew assembleDebug
 
-  realease-master:
-    needs: build-pr
-    runs-on: ubuntu-latest
-    steps:
-    - name: Releasing using Hub
+    - name: Realese using hub for master
+      if: github.branch == 'master'
       uses: ShaunLWM/action-release-debugapk@master
       env:
        GITHUB_TOKEN: ${{ secrets.SecRet }}
        APP_FOLDER: app
        RELEASE_TITLE: New Build
+    
+
     
