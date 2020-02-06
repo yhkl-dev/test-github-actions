@@ -2,8 +2,6 @@ name: Build & Publish Debug APK
 
 on:
  push:
-  branches:
-   - master
    
 jobs:
   build:
