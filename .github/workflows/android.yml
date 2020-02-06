@@ -24,7 +24,7 @@ jobs:
 
   realease-master:
     needs: build-pr
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
     - name: Releasing using Hub
       uses: ShaunLWM/action-release-debugapk@master
