@@ -19,7 +19,7 @@ jobs:
     - name: Make Gradle executable
       run: chmod +x ./gradlew
     - name: Code lint Check
-      run: ./gradlew lint
+      run: ./gradlew lint --warning-mode all
     - name: Build with Gradle
       run: ./gradlew build
 
