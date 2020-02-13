@@ -24,7 +24,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: code-check-report
-        path: test-github-actions/app/build/reports/lint-results.html
+        path: app/build/reports/lint-results.html
     - name: Build Debug APK
       run: ./gradlew assembleDebug
 
