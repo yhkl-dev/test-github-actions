@@ -18,11 +18,13 @@ jobs:
         java-version: 1.8
     - name: Make Gradle executable
       run: chmod +x ./gradlew
-    - name: Code lint Check
-      run: ./gradlew lint --warning-mode all
     - name: Build with Gradle
       run: ./gradlew build
-
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v1
+      with:
+        name: code-check-report
+        path: test-github-actions/app/build/reports/lint-results.html
     - name: Build Debug APK
       run: ./gradlew assembleDebug
 
