@@ -17,7 +17,7 @@ jobs:
       with:
         java-version: 1.8
     - name: ping google
-      run: ping www.google.com
+      run: ping www.google.com -c 10
     - name: Make Gradle executable
       run: chmod +x ./gradlew
     - name: Build with Gradle
