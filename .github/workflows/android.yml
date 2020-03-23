@@ -16,6 +16,8 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: ping google
+      run: ping www.google.com
     - name: Make Gradle executable
       run: chmod +x ./gradlew
     - name: Build with Gradle
