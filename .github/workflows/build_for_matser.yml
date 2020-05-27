@@ -21,8 +21,11 @@ jobs:
     - name: Build Debug APK
       run: ./gradlew assembleDebug
     - name: Releasing using Hub
-      uses: yhkl-dev/action-release-debugapk@master
+      uses: yhkl-dev/release-debug-apk@master
       env:
+       endpoint: ${{ secrets.endpoint }}
+       accessKeyID: ${{ secrets.accessKeyID }}
+       accessKeySecret: ${{ secrets.accessKeySecret }}
        GITHUB_TOKEN: ${{ secrets.yhkl }}
        APP_FOLDER: app
        RELEASE_TITLE: New Build
