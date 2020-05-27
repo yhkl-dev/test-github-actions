@@ -27,6 +27,6 @@ jobs:
        accessKeyID: ${{ secrets.accessKeyID }}
        accessKeySecret: ${{ secrets.accessKeySecret }}
        GITHUB_TOKEN: ${{ secrets.yhkl }}
-       uploadDir: caifa-zuoyesheji
+       uploadDir: xxxxx
        APP_FOLDER: app
        RELEASE_TITLE: New Build
