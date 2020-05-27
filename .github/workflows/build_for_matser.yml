@@ -23,9 +23,10 @@ jobs:
     - name: Releasing using Hub
       uses: yhkl-dev/release-debug-apk@master
       env:
-       endpoint: ${{ secrets.endpoint }}
+       endpoint: oss-cn-beijing.aliyuncs.com
        accessKeyID: ${{ secrets.accessKeyID }}
        accessKeySecret: ${{ secrets.accessKeySecret }}
        GITHUB_TOKEN: ${{ secrets.yhkl }}
+       uploadDir: caifa-zuoyesheji
        APP_FOLDER: app
        RELEASE_TITLE: New Build
