@@ -7,7 +7,7 @@ on:
    
 jobs:
   build:
-    runs-on: yhkl
+    runs-on: ubunut-latest
     steps:
     - uses: actions/checkout@v1
     - name: set up JDK 1.8
