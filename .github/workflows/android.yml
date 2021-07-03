@@ -16,11 +16,17 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: ping google
+      run: ping www.google.com -c 10
     - name: Make Gradle executable
       run: chmod +x ./gradlew
     - name: Build with Gradle
       run: ./gradlew build
-
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v1
+      with:
+        name: code-check-report
+        path: app/build/reports/lint-results.html
     - name: Build Debug APK
       run: ./gradlew assembleDebug
 
